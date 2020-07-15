@@ -13,7 +13,7 @@ import (
 	pbdescriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
 	"github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
 	"github.com/pkg/errors"
-	"github.com/tmc/grpcutil/protoc-gen-flowtypes/opts"
+	"github.com/foolin/grpcutil/protoc-gen-flowtypes/opts"
 )
 
 // Dependencies maps packages names to imported type names.

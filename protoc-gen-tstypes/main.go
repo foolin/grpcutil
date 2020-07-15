@@ -9,7 +9,7 @@ import (
 
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
-	"github.com/tmc/grpcutil/protoc-gen-tstypes/gentstypes"
+	"github.com/foolin/grpcutil/protoc-gen-tstypes/gentstypes"
 	"golang.org/x/crypto/ssh/terminal"
 )
 
