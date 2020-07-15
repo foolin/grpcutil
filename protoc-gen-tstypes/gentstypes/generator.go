@@ -38,6 +38,7 @@ type Parameters struct {
 	OriginalNames         bool
 	Verbose               int
 	Int64AsString         bool
+	ServiceSuffix         string
 	// TODO: allow template specification?
 
 	MessageOptionsFunc MessageOptionsFunc
@@ -360,7 +361,7 @@ func (g *Generator) generateEnum(e *desc.EnumDescriptor, params *Parameters) {
 }
 
 func (g *Generator) generateService(service *desc.ServiceDescriptor, params *Parameters) {
-	g.W(fmt.Sprintf("export interface %sService {", service.GetName()))
+	g.W(fmt.Sprintf("export interface %s%s {", service.GetName(), params.ServiceSuffix))
 	g.incIndent()
 	g.generateServiceMethods(service, params)
 	g.decIndent()

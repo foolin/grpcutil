@@ -22,6 +22,7 @@ var (
 	flagOutputFilenamePattern = flag.String("outpattern", "{{.Dir}}/{{.Descriptor.GetPackage | default \"none\"}}.{{.BaseName}}.d.ts", "output filename pattern")
 	flagDumpDescriptor        = flag.Bool("dump_request_descriptor", false, "if true, dump request descriptor")
 	flagInt64AsString         = flag.Bool("int64_string", false, "if true, use string representation for 64 bit numbers")
+	flagServiceSuffix         = flag.String("service_suffix", "", "if set, the service name will append the suffix")
 )
 
 func main() {
@@ -50,6 +51,7 @@ func main() {
 		OriginalNames:         *flagOriginalNames,
 		DumpRequestDescriptor: *flagDumpDescriptor,
 		Int64AsString:         *flagInt64AsString,
+		ServiceSuffix:         *flagServiceSuffix,
 	})
 	data, err = proto.Marshal(g.Response)
 	if err != nil {
